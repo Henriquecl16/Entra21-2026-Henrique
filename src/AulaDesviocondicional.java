@@ -17,7 +17,8 @@ public class AulaDesviocondicional {
 		//exercicio12();
 		//exercicio13();
 		//exercicio14();
-		exercicio15();
+		//exercicio15();
+		exercicio16();
 		
 	}
 	static void verificarNumeroPar() {
@@ -378,6 +379,31 @@ public class AulaDesviocondicional {
 	        scanner.close();
 		
 	}
+	
+	static void exercicio16() {
+		
+		 Scanner scanner = new Scanner(System.in);
+
+	        System.out.print("Digite o salário mensal: R$ ");
+	        double salario = scanner.nextDouble();
+
+	        System.out.print("Digite o valor da parcela do empréstimo: R$ ");
+	        double parcela = scanner.nextDouble();
+
+	        // Limite máximo permitido (30% do salário)
+	        double limite = salario * 0.30;
+
+	        if (parcela <= limite) {
+	            System.out.println("Empréstimo aprovado!");
+	        } else {
+	            System.out.println("Empréstimo negado! Parcela excede 30% do salário.");
+	        }
+
+	        System.out.printf("Valor máximo permitido para parcela: R$ %.2f%n", limite);
+
+	        scanner.close();
+	}
+	
 	
 	
 	
