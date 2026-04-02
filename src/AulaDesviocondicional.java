@@ -4,7 +4,9 @@ public class AulaDesviocondicional {
 	
 	public static void main(String[] args) {
 		//verificarNumeroPar();
-		exercicio2();
+		//exercicio2();
+		exercicio3();
+		
 	}
 	static void verificarNumeroPar() {
 		Scanner sc = new Scanner(System.in);
@@ -38,6 +40,24 @@ public class AulaDesviocondicional {
 
         scanner.close();
     
+		
+	}
+	
+	static void exercicio3() {
+		 Scanner scanner = new Scanner(System.in);
+
+	        System.out.print("Digite um número: ");
+	        int numero = scanner.nextInt();
+
+	        if (numero > 0) {
+	            System.out.println("O número é POSITIVO.");
+	        } else if (numero < 0) {
+	            System.out.println("O número é NEGATIVO.");
+	        } else {
+	            System.out.println("O número é ZERO.");
+	        }
+
+	        scanner.close();
 		
 	}
 	
