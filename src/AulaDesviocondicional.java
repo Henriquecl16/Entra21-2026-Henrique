@@ -15,7 +15,8 @@ public class AulaDesviocondicional {
 		//exercicio10();
 		//exercicio11();
 		//exercicio12();
-		exercicio13();
+		//exercicio13();
+		exercicio14();
 		
 	}
 	static void verificarNumeroPar() {
@@ -321,6 +322,33 @@ public class AulaDesviocondicional {
         System.out.println("Imposto a pagar: R$ " + imposto);
 
         scanner.close();
+		
+	}
+	
+	static void exercicio14() {
+		 Scanner scanner = new Scanner(System.in);
+
+	        System.out.print("Digite o valor da compra: R$ ");
+	        double valorCompra = scanner.nextDouble();
+	        double desconto = 0.0;
+	        double valorFinal;
+
+	        // Aplica desconto progressivo
+	        if (valorCompra <= 100) {
+	            desconto = 0;
+	        } else if (valorCompra <= 500) {
+	            desconto = valorCompra * 0.10; // 10%
+	        } else {
+	            desconto = valorCompra * 0.20; // 20%
+	        }
+
+	        valorFinal = valorCompra - desconto;
+
+	        System.out.printf("Valor da compra: R$ %.2f%n", valorCompra);
+	        System.out.printf("Desconto aplicado: R$ %.2f%n", desconto);
+	        System.out.printf("Valor final a pagar: R$ %.2f%n", valorFinal);
+
+	        scanner.close();
 		
 	}
 	
