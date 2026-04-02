@@ -9,7 +9,8 @@ public class AulaDesviocondicional {
 		//exercicio4();
 		//exercicio5();
 		//exercicio6();
-		exercicio7();
+		//exercicio7();
+		exercicio8();
 		
 	}
 	static void verificarNumeroPar() {
@@ -145,6 +146,28 @@ public class AulaDesviocondicional {
         }
 
         scanner.close();
+	}
+	
+	static void exercicio8() {
+		Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o lado A: ");
+        double a = scanner.nextDouble();
+
+        System.out.print("Digite o lado B: ");
+        double b = scanner.nextDouble();
+
+        System.out.print("Digite o lado C: ");
+        double c = scanner.nextDouble();
+
+        if (a + b > c && a + c > b && b + c > a) {
+            System.out.println("Os lados formam um triângulo válido!");
+        } else {
+            System.out.println("Os lados NÃO formam um triângulo.");
+        }
+
+        scanner.close();		
+		
 	}
 	
 	
