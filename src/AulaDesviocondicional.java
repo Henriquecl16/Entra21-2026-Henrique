@@ -7,7 +7,8 @@ public class AulaDesviocondicional {
 		//exercicio2();
 		//exercicio3();
 		//exercicio4();
-		exercicio5();
+		//exercicio5();
+		exercicio6();
 		
 	}
 	static void verificarNumeroPar() {
@@ -93,6 +94,35 @@ public class AulaDesviocondicional {
         }
 
         scanner.close();
+	}
+	
+	static void exercicio6() {
+		
+		Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o primeiro número: ");
+        int n1 = scanner.nextInt();
+
+        System.out.print("Digite o segundo número: ");
+        int n2 = scanner.nextInt();
+
+        System.out.print("Digite o terceiro número: ");
+        int n3 = scanner.nextInt();
+
+        int maior;
+
+        if (n1 >= n2 && n1 >= n3) {
+            maior = n1;
+        } else if (n2 >= n1 && n2 >= n3) {
+            maior = n2;
+        } else {
+            maior = n3;
+        }
+
+        System.out.println("O maior número é: " + maior);
+
+        scanner.close();
+		
 	}
 	
 	
