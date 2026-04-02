@@ -14,7 +14,8 @@ public class AulaDesviocondicional {
 		//exercicio9();
 		//exercicio10();
 		//exercicio11();
-		exercicio12();
+		//exercicio12();
+		exercicio13();
 		
 	}
 	static void verificarNumeroPar() {
@@ -295,6 +296,31 @@ public class AulaDesviocondicional {
 	        }
 
 	        scanner.close();
+		
+	}
+	
+	static void exercicio13() {
+		Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o salário: R$ ");
+        double salario = scanner.nextDouble();
+        double imposto;
+
+        
+        if (salario <= 2000) {
+            imposto = 0;
+        } else if (salario <= 4000) {
+            imposto = salario * 0.10;
+        } else if (salario <= 7000) {
+            imposto = salario * 0.15;
+        } else {
+            imposto = salario * 0.20;
+        }
+
+        System.out.println("Salário: R$ " + salario);
+        System.out.println("Imposto a pagar: R$ " + imposto);
+
+        scanner.close();
 		
 	}
 	
