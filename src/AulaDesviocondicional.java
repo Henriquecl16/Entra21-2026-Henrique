@@ -8,7 +8,8 @@ public class AulaDesviocondicional {
 		//exercicio3();
 		//exercicio4();
 		//exercicio5();
-		exercicio6();
+		//exercicio6();
+		exercicio7();
 		
 	}
 	static void verificarNumeroPar() {
@@ -123,6 +124,27 @@ public class AulaDesviocondicional {
 
         scanner.close();
 		
+	}
+	
+	static void exercicio7() {
+		Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite a nota (0 a 10): ");
+        double nota = scanner.nextDouble();
+
+        if (nota < 0 || nota > 10) {
+            System.out.println("Nota inválida! Digite um valor entre 0 e 10.");
+        } else if (nota <= 4) {
+            System.out.println("Classificação: Insuficiente");
+        } else if (nota <= 6) {
+            System.out.println("Classificação: Regular");
+        } else if (nota <= 8) {
+            System.out.println("Classificação: Bom");
+        } else {
+            System.out.println("Classificação: Excelente");
+        }
+
+        scanner.close();
 	}
 	
 	
