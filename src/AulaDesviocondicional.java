@@ -5,7 +5,8 @@ public class AulaDesviocondicional {
 	public static void main(String[] args) {
 		//verificarNumeroPar();
 		//exercicio2();
-		exercicio3();
+		//exercicio3();
+		exercicio4();
 		
 	}
 	static void verificarNumeroPar() {
@@ -55,6 +56,22 @@ public class AulaDesviocondicional {
 	            System.out.println("O número é NEGATIVO.");
 	        } else {
 	            System.out.println("O número é ZERO.");
+	        }
+
+	        scanner.close();
+		
+	}
+	
+	static void exercicio4() {
+		 Scanner scanner = new Scanner(System.in);
+
+	        System.out.print("Digite a nota do aluno (0 a 10): ");
+	        double nota = scanner.nextDouble();
+
+	        if (nota >= 6) {
+	            System.out.println("Aprovado");
+	        } else {
+	            System.out.println("Reprovado");
 	        }
 
 	        scanner.close();
