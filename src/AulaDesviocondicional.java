@@ -16,7 +16,8 @@ public class AulaDesviocondicional {
 		//exercicio11();
 		//exercicio12();
 		//exercicio13();
-		exercicio14();
+		//exercicio14();
+		exercicio15();
 		
 	}
 	static void verificarNumeroPar() {
@@ -347,6 +348,32 @@ public class AulaDesviocondicional {
 	        System.out.printf("Valor da compra: R$ %.2f%n", valorCompra);
 	        System.out.printf("Desconto aplicado: R$ %.2f%n", desconto);
 	        System.out.printf("Valor final a pagar: R$ %.2f%n", valorFinal);
+
+	        scanner.close();
+		
+	}
+	static void exercicio15() {
+		 Scanner scanner = new Scanner(System.in);
+
+	        System.out.print("Digite a idade: ");
+	        int idade = scanner.nextInt();
+	        String classificacao;
+
+	        // Classificação por idade
+	        if (idade >= 0 && idade <= 12) {
+	            classificacao = "Criança";
+	        } else if (idade >= 13 && idade <= 17) {
+	            classificacao = "Adolescente";
+	        } else if (idade >= 18 && idade <= 59) {
+	            classificacao = "Adulto";
+	        } else if (idade >= 60) {
+	            classificacao = "Idoso";
+	        } 
+	        else {
+	            classificacao = "Idade inválida";
+	        }
+
+	        System.out.println("Classificação: " + classificacao);
 
 	        scanner.close();
 		
