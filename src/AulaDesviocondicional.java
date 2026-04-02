@@ -11,7 +11,8 @@ public class AulaDesviocondicional {
 		//exercicio6();
 		//exercicio7();
 		//exercicio8();
-		exercicio9();
+		//exercicio9();
+		exercicio10();
 		
 	}
 	static void verificarNumeroPar() {
@@ -202,6 +203,30 @@ public class AulaDesviocondicional {
 	        }
 
 	        scanner.close();
+		
+	}
+	
+	static void exercicio10() {
+		Scanner scanner = new Scanner(System.in);
+
+        
+        String usuarioCorreto = "admin";
+        String senhaCorreta = "1234";
+
+        System.out.print("Digite o usuário: ");
+        String usuario = scanner.nextLine();
+
+        System.out.print("Digite a senha: ");
+        String senha = scanner.nextLine();
+
+       
+        if (usuario.equals(usuarioCorreto) && senha.equals(senhaCorreta)) {
+            System.out.println("Acesso permitido");
+        } else {
+            System.out.println("Acesso negado");
+        }
+
+        scanner.close();
 		
 	}
 	
