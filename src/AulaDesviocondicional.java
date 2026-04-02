@@ -6,7 +6,8 @@ public class AulaDesviocondicional {
 		//verificarNumeroPar();
 		//exercicio2();
 		//exercicio3();
-		exercicio4();
+		//exercicio4();
+		exercicio5();
 		
 	}
 	static void verificarNumeroPar() {
@@ -77,5 +78,23 @@ public class AulaDesviocondicional {
 	        scanner.close();
 		
 	}
+	
+	static void exercicio5() {
+		
+		Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite a idade: ");
+        int idade = scanner.nextInt();
+
+        if (idade >= 16) {
+            System.out.println("Pode votar.");
+        } else {
+            System.out.println("Não pode votar.");
+        }
+
+        scanner.close();
+	}
+	
+	
 	
 }
