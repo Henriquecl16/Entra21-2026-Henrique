@@ -13,7 +13,8 @@ public class AulaDesviocondicional {
 		//exercicio8();
 		//exercicio9();
 		//exercicio10();
-		exercicio11();
+		//exercicio11();
+		exercicio12();
 		
 	}
 	static void verificarNumeroPar() {
@@ -243,6 +244,54 @@ public class AulaDesviocondicional {
 	            System.out.println(ano + " é um ano bissexto.");
 	        } else {
 	            System.out.println(ano + " NÃO é um ano bissexto.");
+	        }
+
+	        scanner.close();
+		
+	}
+	
+	static void exercicio12() {
+		 Scanner scanner = new Scanner(System.in);
+
+	        System.out.print("Digite o primeiro número: ");
+	        double num1 = scanner.nextDouble();
+
+	        System.out.print("Digite o segundo número: ");
+	        double num2 = scanner.nextDouble();
+
+	        System.out.print("Digite a operação (+, -, *, /): ");
+	        char operacao = scanner.next().charAt(0);
+
+	        double resultado;
+	        boolean valido = true;
+
+	        switch (operacao) {
+	            case '+':
+	                resultado = num1 + num2;
+	                break;
+	            case '-':
+	                resultado = num1 - num2;
+	                break;
+	            case '*':
+	                resultado = num1 * num2;
+	                break;
+	            case '/':
+	                if (num2 != 0) {
+	                    resultado = num1 / num2;
+	                } else {
+	                    System.out.println("Erro: Divisão por zero!");
+	                    valido = false;
+	                    resultado = 0;
+	                }
+	                break;
+	            default:
+	                System.out.println("Operação inválida!");
+	                valido = false;
+	                resultado = 0;
+	        }
+
+	        if (valido) {
+	            System.out.println("Resultado: " + resultado);
 	        }
 
 	        scanner.close();
