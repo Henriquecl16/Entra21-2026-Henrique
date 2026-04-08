@@ -1,5 +1,7 @@
 
  import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 public class AulaJavaArrays {
 
 	public static void main(String[] args) {
@@ -33,23 +35,18 @@ public class AulaJavaArrays {
 			System.out.println(c);
 		}*/
 		//desafioDobro();
-		desafioimparpar();
-	
-
-	
-	
-	
-	
-	
-	
-	
+		//desafioimparpar();
+		//int retorno = somar (20 , 40);
+		//System.out.println(retorno);
+		
+		double precoPizza = 150.00;
+		int numeroPessoas = 10;
+		System.out.println(dividir(precoPizza, numeroPessoas));		
+		
 	
 	
-}
-
-	
-	
-	static void desafioDobro() {
+	}
+  static void desafioDobro() {
 		Scanner scanner = new Scanner (System.in);
 		
 		int[] numeros = new int[5];
@@ -76,6 +73,30 @@ public class AulaJavaArrays {
 		
 		
 	}
+  
+  static void listaArray(int[] dados) {
+	  for(int n : dados) {
+		  System.out.println(n);
+		  
+	  }
+	  
+	 
+	  }
+  
+  static int somar(int n1, int n2) {
+	  return n1 + n2;
+  }
+  
+  static double dividir(double numero, int divisor) {
+	  if(divisor == 0) {
+		  JOptionPane.showInternalMessageDialog(null, "não pode dividir por zero");
+		  return 0.0;
+	  }
+	  return numero / divisor;
+  }
+	
+  
+	
 	
 	static void desafioimparpar() {
 		Scanner scanner = new Scanner (System.in);
