@@ -38,10 +38,18 @@ public class AulaJavaArrays {
 		//desafioimparpar();
 		//int retorno = somar (20 , 40);
 		//System.out.println(retorno);
+		//exercicio3();
+		//exercicio4();
+		exercicio5();	
+		//exercicio6();
 		
-		double precoPizza = 150.00;
-		int numeroPessoas = 10;
-		System.out.println(dividir(precoPizza, numeroPessoas));		
+		
+		
+		
+		
+		//double precoPizza = 150.00;
+		//int numeroPessoas = 10;
+		//System.out.println(dividir(precoPizza, numeroPessoas));		
 		
 	
 	
@@ -118,5 +126,109 @@ public class AulaJavaArrays {
 			}
 		}
 	}
+	
+	static void exercicio3() {
+		
+		int [] vetor = new int[10];
+		for (int i = 0; i <10; i++) {
+			vetor[i] = i + 1;
+		}
+				for (int i1 = 9; i1 >=0; i1--) {
+				System.out.print(vetor[i1] + " " );
+				
+				}
+			}
+	
+	static void exercicio4() {
+		
+		int vetor[] = new int [15];
+		Scanner sc = new Scanner(System.in);
+		for (int i = 0; i < 15; i++) {
+		    System.out.print("Informe um número: ");
+		    vetor[i] = sc.nextInt();
+		}
+		int maior = vetor[0];
+
+		for (int i = 1; i < 15; i++) {
+		    if (vetor[i] > maior) {
+		        maior = vetor[i];
+		    }
+		}
+		
+		System.out.println("Maior valor: " +  maior);
+		System.out.println("Posição: ");
+		
+		for (int i = 0; i <15; i++) {
+			if (vetor[i] == maior) {
+				System.out.print(i + " " );
+				}
+				}
+		
+		
+	
+	}
+	
+	static void exercicio5() {
+		
+		int vetor[] = new int [8];
+		
+		Scanner sc = new Scanner(System.in);
+		
+		for (int i = 0; i < 8; i++) {
+			System.out.println("Digite um número: ");
+			vetor [i] = sc.nextInt();
+			}
+		
+		for (int i = 0; i < 8; i++) {
+			for (int j = i + 1; j < 8; j++) {
+				if (vetor [i] > vetor [j]) {
+				int temp = vetor[i];
+				vetor[i] = vetor [j];
+				vetor[j] = temp;
+				}
+				}
+		}
+		System.out.println("Vetor ordenado: ");
+		
+		for (int i = 0; i < 8; i++) {
+			System.out.print(vetor[i] + " ");
+		}
+		
+		
+		
+	
+	}
+	
+	static void exercicio6() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int[] numeros = new int [10];
+		
+		for (int i = 0; i< 10; i ++) {
+			System.out.println("Digite um número: ");
+			numeros [i] = sc.nextInt();
+		}
+		
+		int soma = 0;
+		for (int i = 0; i < 10; i++) {
+			soma += numeros [i];
+			}
+		
+		double media = soma / 10.0;
+		
+		System.out.println("Média: " + media);
+		System.out.println("Numeros acima da média:");
+		
+		for (int i = 0; i < 10; i++) {
+			if (numeros[i] > media) {
+				System.out.println(numeros[i]);
+				}
+		}
+		 
+	sc.close();
+	}
+	
+	
 	
 }
