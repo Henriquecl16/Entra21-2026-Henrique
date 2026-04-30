@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Carros.com</title>
+
+  <!-- Favicon corrigido -->
+  <link rel="icon" href="imagens/icon car.jpg" type="image/png">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+    }
+
+    /* GRID DE CARDS */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .fonte {
+      font-size: 12px;
+      color: gray;
+      margin-bottom: 8px;
+    }
+
+    .titulo {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .acoes {
+      display: flex;
+      gap: 10px;
+      color: gray;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <img src="imagens/Senna Mclaren.jpg">
+      <div class="card-content">
+        <div class="fonte">Auto Esporte • 3h</div>
+        <div class="titulo">McLaren Senna impressiona com 800 cv e foco em pistas</div>
+        <div class="acoes">👍 9000 💬 12000</div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <img src="imagens/testarossa.jpg">
+      <div class="card-content">
+        <div class="fonte">Motor1 • 1h</div>
+        <div class="titulo">Ferrari lança novo supercarro híbrido com mais de 1000 cv</div>
+        <div class="acoes">👍 65 💬 12</div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card">
+      <img src="imagens/fenomeno.jpg">
+      <div class="card-content">
+        <div class="fonte">Quatro Rodas • 2h</div>
+        <div class="titulo">Novo Lamborghini bate recorde de velocidade</div>
+        <div class="acoes">👍 80 💬 20</div>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card">
+      <img src="imagens/purosangue.jpg">
+      <div class="card-content">
+        <div class="fonte">CNN Brasil • 4h</div>
+        <div class="titulo">SUVs dominam o mercado automotivo global</div>
+        <div class="acoes">👍 22 💬 4</div>
+      </div>
+    </div>
+
+
+<a href="https://brazil.nissannews.com/pt-BR/releases/do-skyline-ao-gt-r"
+   target="_blank"
+   style="text-decoration: none; color: black;">
+  <div class="card">
+    <img src="imagens/gtr 34.jpg">
+    <div class="card-content">
+      <div class="fonte">Nissan Noticias • 2min</div>
+      <div class="titulo">Novo GTR R34 na cor Midnight Purple impressiona nas ruas por onde passa.</div>
+      <div class="acoes">👍 1000 💬 999</div>
+    </div>
+  </div>
+</a>
+
+  </div>
+
+</body>
+</html>
