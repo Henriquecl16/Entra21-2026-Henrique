@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 *{
     margin: 0;
     padding: 0;
@@ -113,7 +113,7 @@ tbody tr:nth-child(even){
     padding: 15px 30px;
     font-size: 18px;
 }
-=======
+
 body{
         text-align: center;
         background: linear-gradient(to right, rgb(233, 233, 255), white);
@@ -231,4 +231,4 @@ button:hover{
 
 
 
->>>>>>> a05a099d58942169683b981cb1d51d4650bbf482
+

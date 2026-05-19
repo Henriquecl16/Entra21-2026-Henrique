@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 function cadastrarCliente(){
 
     let nome = document.getElementById("nome").value;
@@ -27,7 +27,7 @@ function cadastrarCliente(){
     document.getElementById("email").value = "";
     document.getElementById("telefone").value = "";
 }
-=======
+
 let assentos = document.querySelectorAll(".assento");
 
 
@@ -60,4 +60,4 @@ assentos.forEach(function(assento){
     });
 
 
->>>>>>> a05a099d58942169683b981cb1d51d4650bbf482
+
