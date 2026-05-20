@@ -218,3 +218,21 @@ tbody tr:nth-child(even){
 .input-erro{
     border: 2px solid red;
 }
+
+/* Área dos botões */
+
+.acoes{
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Botão editar */
+
+.btn-editar{
+    background-color: #f59e0b;
+}
+
+.btn-editar:hover{
+    background-color: #d97706;
+}

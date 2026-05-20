@@ -1,3 +1,5 @@
+let indexEditando = -1;
+
 function cadastrarCliente(){
 
     let nome = document.getElementById("nome").value;
@@ -76,8 +78,19 @@ function cadastrarCliente(){
 
     // Adicionando cliente
 
-    clientes.push(cliente);
+   let clienteEditando =
+   JSON.parse(localStorage.getItem("clienteEditando"));
 
+    if(clienteEditando){
+
+    clientes[clienteEditando.index] = cliente;
+
+    localStorage.removeItem("clienteEditando");
+
+}else{
+
+    clientes.push(cliente);
+}
     // Salvando novamente
 
     localStorage.setItem(
@@ -128,16 +141,45 @@ function mostrarClientes(){
                     ${cliente.telefone}
                 </p>
 
-                <button
-                    class="btn-excluir"
-                    onclick="excluirCliente(${index})"
-                >
-                    Excluir
-                </button>
+                <div class="acoes">
+
+    <button
+        class="btn-editar"
+        onclick="editarCliente(${index})"
+    >
+        Editar
+    </button>
+
+    <button
+        class="btn-excluir"
+        onclick="excluirCliente(${index})"
+    >
+        Excluir
+    </button>
+
+</div>
 
             </div>
         `;
     });
+}
+
+function editarCliente(index){
+
+    let clientes =
+    JSON.parse(localStorage.getItem("clientes")) || [];
+
+    let cliente = clientes[index];
+
+    localStorage.setItem(
+        "clienteEditando",
+        JSON.stringify({
+            cliente: cliente,
+            index: index
+        })
+    );
+
+    window.location.href = "cadastro.html";
 }
 
 function excluirCliente(index){
@@ -153,6 +195,21 @@ function excluirCliente(index){
     );
 
     mostrarClientes();
+}
+
+let clienteEditando =
+JSON.parse(localStorage.getItem("clienteEditando"));
+
+if(clienteEditando){
+
+    document.getElementById("nome").value =
+    clienteEditando.cliente.nome;
+
+    document.getElementById("email").value =
+    clienteEditando.cliente.email;
+
+    document.getElementById("telefone").value =
+    clienteEditando.cliente.telefone;
 }
 
 mostrarClientes();
