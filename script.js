@@ -1,63 +1,158 @@
-
 function cadastrarCliente(){
 
     let nome = document.getElementById("nome").value;
     let email = document.getElementById("email").value;
     let telefone = document.getElementById("telefone").value;
 
-    if(nome === "" || email === "" || telefone === ""){
+    // Limpando mensagens antigas
 
-        alert("Preencha todos os campos!");
+    document.getElementById("erroNome").innerHTML = "";
+    document.getElementById("erroEmail").innerHTML = "";
+    document.getElementById("erroTelefone").innerHTML = "";
+
+    document.getElementById("mensagem").innerHTML = "";
+
+    // Removendo bordas vermelhas antigas
+
+    document.getElementById("nome").classList.remove("input-erro");
+    document.getElementById("email").classList.remove("input-erro");
+    document.getElementById("telefone").classList.remove("input-erro");
+
+    // Validação do nome
+
+    if(nome === ""){
+
+        document.getElementById("erroNome").innerHTML =
+        "Preencha o nome";
+
+        document.getElementById("nome").classList.add("input-erro");
+
+        document.getElementById("nome").focus();
+
         return;
     }
 
-    let tabela = document.getElementById("tabelaClientes");
+    // Validação do e-mail
 
-    let novaLinha = tabela.insertRow();
+    if(email === ""){
 
-    let colunaNome = novaLinha.insertCell(0);
-    let colunaEmail = novaLinha.insertCell(1);
-    let colunaTelefone = novaLinha.insertCell(2);
+        document.getElementById("erroEmail").innerHTML =
+        "Preencha o e-mail";
 
-    colunaNome.innerHTML = nome;
-    colunaEmail.innerHTML = email;
-    colunaTelefone.innerHTML = telefone;
+        document.getElementById("email").classList.add("input-erro");
+
+        document.getElementById("email").focus();
+
+        return;
+    }
+
+    // Validação do telefone
+
+    if(telefone === ""){
+
+        document.getElementById("erroTelefone").innerHTML =
+        "Preencha o telefone";
+
+        document.getElementById("telefone").classList.add("input-erro");
+
+        document.getElementById("telefone").focus();
+
+        return;
+    }
+
+    // Criando objeto do cliente
+
+    let cliente = {
+
+        nome: nome,
+        email: email,
+        telefone: telefone
+    };
+
+    // Pegando clientes do localStorage
+
+    let clientes =
+    JSON.parse(localStorage.getItem("clientes")) || [];
+
+    // Adicionando cliente
+
+    clientes.push(cliente);
+
+    // Salvando novamente
+
+    localStorage.setItem(
+        "clientes",
+        JSON.stringify(clientes)
+    );
+
+    // Limpando inputs
 
     document.getElementById("nome").value = "";
     document.getElementById("email").value = "";
     document.getElementById("telefone").value = "";
+
+    // Mensagem de sucesso
+
+    document.getElementById("mensagem").innerHTML =
+    "Cliente cadastrado com sucesso!";
 }
 
-let assentos = document.querySelectorAll(".assento");
+function mostrarClientes(){
 
+    let lista = document.getElementById("listaClientes");
 
-assentos.forEach(function(assento){
+    if(!lista){
+        return;
+    }
 
-    assento.addEventListener("click", function(){
-        if(assento.classList.contains("ocupado")){
-            return;
-        }
+    let clientes =
+    JSON.parse(localStorage.getItem("clientes")) || [];
 
-        assento.classList.toggle("selecionado");
+    lista.innerHTML = "";
 
-        let marcados = document.querySelectorAll(".selecionado");
+    clientes.forEach((cliente, index) => {
 
-    let nomes = "";
+        lista.innerHTML += `
 
-    marcados.forEach(function(item){
+            <div class="card">
 
-       let letra = item.parentElement.getAttribute("data-fileira");
+                <h3>${cliente.nome}</h3>
 
-     nomes += letra + item.innerHTML + " ";
+                <p>
+                    <strong>Email:</strong>
+                    ${cliente.email}
+                </p>
 
+                <p>
+                    <strong>Telefone:</strong>
+                    ${cliente.telefone}
+                </p>
+
+                <button
+                    class="btn-excluir"
+                    onclick="excluirCliente(${index})"
+                >
+                    Excluir
+                </button>
+
+            </div>
+        `;
     });
+}
 
-    document.getElementById("selecionados").innerHTML =
-    "Assentos selecionados: " + nomes;
+function excluirCliente(index){
 
-});
+    let clientes =
+    JSON.parse(localStorage.getItem("clientes")) || [];
 
-    });
+    clientes.splice(index, 1);
 
+    localStorage.setItem(
+        "clientes",
+        JSON.stringify(clientes)
+    );
 
+    mostrarClientes();
+}
 
+mostrarClientes();
