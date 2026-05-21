@@ -64,12 +64,24 @@ function cadastrarCliente(){
 
     // Criando objeto do cliente
 
-    let cliente = {
+   let cliente = {
 
-        nome: nome,
-        email: email,
-        telefone: telefone
-    };
+    nome: nome,
+
+    email: email,
+
+    telefone: telefone,
+
+    cep: document.getElementById("cep").value,
+
+    rua: document.getElementById("rua").value,
+
+    bairro: document.getElementById("bairro").value,
+
+    cidade: document.getElementById("cidade").value,
+
+    estado: document.getElementById("estado").value
+}
 
     // Pegando clientes do localStorage
 
@@ -125,42 +137,67 @@ function mostrarClientes(){
 
     clientes.forEach((cliente, index) => {
 
-        lista.innerHTML += `
+       lista.innerHTML += `
 
-            <div class="card">
+    <div class="card">
 
-                <h3>${cliente.nome}</h3>
+        <h3>${cliente.nome}</h3>
 
-                <p>
-                    <strong>Email:</strong>
-                    ${cliente.email}
-                </p>
+        <p>
+            <strong>E-mail:</strong>
+            ${cliente.email}
+        </p>
 
-                <p>
-                    <strong>Telefone:</strong>
-                    ${cliente.telefone}
-                </p>
+        <p>
+            <strong>Telefone:</strong>
+            ${cliente.telefone}
+        </p>
 
-                <div class="acoes">
+        <p>
+            <strong>CEP:</strong>
+            ${cliente.cep}
+        </p>
 
-    <button
-        class="btn-editar"
-        onclick="editarCliente(${index})"
-    >
-        Editar
-    </button>
+        <p>
+            <strong>Rua:</strong>
+            ${cliente.rua}
+        </p>
 
-    <button
-        class="btn-excluir"
-        onclick="excluirCliente(${index})"
-    >
-        Excluir
-    </button>
+        <p>
+            <strong>Bairro:</strong>
+            ${cliente.bairro}
+        </p>
 
-</div>
+        <p>
+            <strong>Cidade:</strong>
+            ${cliente.cidade}
+        </p>
 
-            </div>
-        `;
+        <p>
+            <strong>Estado:</strong>
+            ${cliente.estado}
+        </p>
+
+        <div class="acoes">
+
+            <button
+                class="btn-editar"
+                onclick="editarCliente(${index})"
+            >
+                Editar
+            </button>
+
+            <button
+                class="btn-excluir"
+                onclick="excluirCliente(${index})"
+            >
+                Excluir
+            </button>
+
+        </div>
+
+    </div>
+`;
     });
 }
 
@@ -213,3 +250,26 @@ if(clienteEditando){
 }
 
 mostrarClientes();
+
+async function buscarCEP(){
+
+    let cep =
+    document.getElementById("cep").value;
+
+    let resposta =
+    await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+
+    let dados = await resposta.json();
+
+    document.getElementById("rua").value =
+    dados.logradouro;
+
+    document.getElementById("bairro").value =
+    dados.bairro;
+
+    document.getElementById("cidade").value =
+    dados.localidade;
+
+    document.getElementById("estado").value =
+    dados.uf;
+}

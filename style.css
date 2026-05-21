@@ -59,7 +59,7 @@ button{
 }
 
 button:hover{
-    background-color: #0b5ed7;
+    background-color: #0bd778;
     transform: scale(1.03);
 }
 
@@ -181,7 +181,7 @@ tbody tr:nth-child(even){
 
     padding: 8px 14px;
 
-    background-color: #4f46e5;
+    background-color: #eb2525;
 
     color: white;
 
@@ -197,7 +197,7 @@ tbody tr:nth-child(even){
 }
 
 .btn-excluir:hover{
-    background-color: #4338ca;
+    background-color: #1e6fe9;
 }
 
 .erro{
@@ -230,9 +230,16 @@ tbody tr:nth-child(even){
 /* Botão editar */
 
 .btn-editar{
-    background-color: #f59e0b;
+    background-color: #0bf574;
 }
 
 .btn-editar:hover{
-    background-color: #d97706;
+    background-color: #1e6fe9;
+}
+
+.logo{
+
+    width: 120px;
+
+    margin-bottom: 20px;
 }
