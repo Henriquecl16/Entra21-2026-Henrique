@@ -6,14 +6,14 @@
 }
 
 body{
-    background: linear-gradient(to right, #1e3c72, #2a5298);
+    background: linear-gradient(to right, #2555ad, #5691f8);
     padding: 40px;
 }
 
 /* Página de cadastro */
 
 .container{
-    width: 700px;
+    width: 700px;   
     margin: auto;
     background: linear-gradient(135deg, #ffffff, #dbeafe, #93c5fd);
     padding: 30px;
@@ -242,4 +242,27 @@ tbody tr:nth-child(even){
     width: 120px;
 
     margin-bottom: 20px;
+}
+
+.endereco{
+
+    display: none;
+
+    margin-top: 15px;
+
+    padding-top: 10px;
+
+    border-top: 1px solid #ddd;
+}
+
+.btn-endereco{
+
+    margin-top: 10px;
+
+    background-color: #1e6fe9;
+}
+
+.btn-endereco:hover{
+
+    background-color: #475569;
 }

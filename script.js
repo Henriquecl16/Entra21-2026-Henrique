@@ -136,27 +136,38 @@ function mostrarClientes(){
     lista.innerHTML = "";
 
     clientes.forEach((cliente, index) => {
+lista.innerHTML += `
 
-       lista.innerHTML += `
+<div class="card">
 
-    <div class="card">
+    <h3>${cliente.nome}</h3>
 
-        <h3>${cliente.nome}</h3>
+    <p>
+        <strong>E-mail:</strong>
+        ${cliente.email}
+    </p>
 
-        <p>
-            <strong>E-mail:</strong>
-            ${cliente.email}
-        </p>
+    <p>
+        <strong>Telefone:</strong>
+        ${cliente.telefone}
+    </p>
 
-        <p>
-            <strong>Telefone:</strong>
-            ${cliente.telefone}
-        </p>
+    <p>
+        <strong>CEP:</strong>
+        ${cliente.cep}
+    </p>
 
-        <p>
-            <strong>CEP:</strong>
-            ${cliente.cep}
-        </p>
+    <button
+        class="btn-endereco"
+        onclick="toggleEndereco(${index})"
+    >
+        Mostrar endereço ▼
+    </button>
+
+    <div
+        class="endereco"
+        id="endereco-${index}"
+    >
 
         <p>
             <strong>Rua:</strong>
@@ -178,25 +189,27 @@ function mostrarClientes(){
             ${cliente.estado}
         </p>
 
-        <div class="acoes">
+    </div>
 
-            <button
-                class="btn-editar"
-                onclick="editarCliente(${index})"
-            >
-                Editar
-            </button>
+    <div class="acoes">
 
-            <button
-                class="btn-excluir"
-                onclick="excluirCliente(${index})"
-            >
-                Excluir
-            </button>
+        <button
+            class="btn-editar"
+            onclick="editarCliente(${index})"
+        >
+            Editar
+        </button>
 
-        </div>
+        <button
+            class="btn-excluir"
+            onclick="excluirCliente(${index})"
+        >
+            Excluir
+        </button>
 
     </div>
+
+</div>
 `;
     });
 }
@@ -272,4 +285,19 @@ async function buscarCEP(){
 
     document.getElementById("estado").value =
     dados.uf;
+}
+
+function toggleEndereco(index){
+
+    let area =
+    document.getElementById(`endereco-${index}`);
+
+    if(area.style.display === "block"){
+
+        area.style.display = "none";
+
+    }else{
+
+        area.style.display = "block";
+    }
 }
